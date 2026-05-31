@@ -10,56 +10,148 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
-        
+
+        /* 登录页面样式 */
+        #login-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .login-form input {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .login-form input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .login-form button {
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .login-form button:hover {
+            background: #5568d3;
+        }
+
+        .login-form button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .login-error {
+            color: #e53e3e;
+            font-size: 0.9em;
+            text-align: center;
+            display: none;
+        }
+
+        .login-loading {
+            text-align: center;
+            color: #666;
+            display: none;
+        }
+
+        /* 主页面样式 */
+        #main-page {
+            display: none;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .header {
             text-align: center;
             color: white;
             margin-bottom: 40px;
         }
-        
+
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
         }
-        
+
         .header p {
             font-size: 1.1em;
             opacity: 0.9;
         }
-        
+
         .filter-section {
             background: white;
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
+
         .filter-label {
             display: block;
             margin-bottom: 10px;
             font-weight: 600;
             color: #333;
         }
-        
+
         .tag-buttons {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
-        
+
         .tag-btn {
             padding: 8px 16px;
             border: 2px solid #667eea;
@@ -70,17 +162,17 @@
             transition: all 0.3s;
             font-size: 0.95em;
         }
-        
+
         .tag-btn:hover {
             background: #667eea;
             color: white;
         }
-        
+
         .tag-btn.active {
             background: #667eea;
             color: white;
         }
-        
+
         .search-box {
             width: 100%;
             padding: 12px;
@@ -89,47 +181,47 @@
             border-radius: 8px;
             font-size: 1em;
         }
-        
+
         .search-box:focus {
             outline: none;
             border-color: #667eea;
         }
-        
+
         .prompts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 20px;
         }
-        
+
         .prompt-card {
             background: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s;
             display: flex;
             flex-direction: column;
         }
-        
+
         .prompt-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
-        
+
         .prompt-title {
             font-size: 1.2em;
             font-weight: 600;
             color: #333;
             margin-bottom: 10px;
         }
-        
+
         .prompt-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             margin-bottom: 12px;
         }
-        
+
         .prompt-tag {
             display: inline-block;
             background: #f0f0f0;
@@ -138,7 +230,7 @@
             border-radius: 12px;
             font-size: 0.85em;
         }
-        
+
         .prompt-preview {
             color: #666;
             font-size: 0.95em;
@@ -150,12 +242,12 @@
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
         }
-        
+
         .prompt-actions {
             display: flex;
             gap: 10px;
         }
-        
+
         .copy-btn {
             flex: 1;
             padding: 10px;
@@ -167,15 +259,15 @@
             font-weight: 600;
             transition: all 0.3s;
         }
-        
+
         .copy-btn:hover {
             background: #5568d3;
         }
-        
+
         .copy-btn.copied {
             background: #48bb78;
         }
-        
+
         .view-btn {
             flex: 1;
             padding: 10px;
@@ -187,21 +279,21 @@
             font-weight: 600;
             transition: all 0.3s;
         }
-        
+
         .view-btn:hover {
             background: #e0e0e0;
         }
-        
+
         .empty-state {
             text-align: center;
             color: white;
             padding: 40px;
         }
-        
+
         .empty-state p {
             font-size: 1.1em;
         }
-        
+
         .modal {
             display: none;
             position: fixed;
@@ -209,16 +301,16 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1000;
             align-items: center;
             justify-content: center;
         }
-        
+
         .modal.active {
             display: flex;
         }
-        
+
         .modal-content {
             background: white;
             padding: 30px;
@@ -228,14 +320,14 @@
             overflow-y: auto;
             width: 90%;
         }
-        
+
         .modal-header {
             font-size: 1.5em;
             font-weight: 600;
             margin-bottom: 15px;
             color: #333;
         }
-        
+
         .modal-body {
             color: #666;
             line-height: 1.6;
@@ -243,12 +335,12 @@
             white-space: pre-wrap;
             word-break: break-word;
         }
-        
+
         .modal-footer {
             display: flex;
             gap: 10px;
         }
-        
+
         .modal-copy-btn {
             flex: 1;
             padding: 12px;
@@ -259,7 +351,7 @@
             cursor: pointer;
             font-weight: 600;
         }
-        
+
         .modal-close-btn {
             flex: 1;
             padding: 12px;
@@ -270,7 +362,7 @@
             cursor: pointer;
             font-weight: 600;
         }
-        
+
         .toast {
             position: fixed;
             bottom: 20px;
@@ -282,7 +374,7 @@
             z-index: 2000;
             animation: slideIn 0.3s ease-out;
         }
-        
+
         @keyframes slideIn {
             from {
                 transform: translateX(400px);
@@ -293,113 +385,291 @@
                 opacity: 1;
             }
         }
+
+        /* 导航栏 */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .navbar-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .navbar-btn {
+            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+
+        .navbar-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>✨ 提示词库</h1>
-            <p>精选高效提示词，一键复制即用</p>
-        </div>
-        
-        <div class="filter-section">
-            <label class="filter-label">📁 分类筛选</label>
-            <div class="tag-buttons" id="tagButtons"></div>
-            
-            <input 
-                type="text" 
-                class="search-box" 
-                id="searchInput" 
-                placeholder="🔍 搜索提示词名称或内容..."
-            >
-        </div>
-        
-        <div class="prompts-grid" id="promptsGrid"></div>
-        
-        <div class="empty-state" id="emptyState" style="display:none;">
-            <p>暂无匹配的提示词</p>
+    <!-- 登录页面 -->
+    <div id="login-page">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>✨ 提示词库</h1>
+                <p>请输入访问密码</p>
+            </div>
+            <form class="login-form" id="loginForm">
+                <input
+                    type="password"
+                    id="passwordInput"
+                    placeholder="🔑 输入密码"
+                    required
+                    autocomplete="current-password"
+                >
+                <button type="submit" id="loginBtn">登录</button>
+            </form>
+            <div class="login-error" id="loginError"></div>
+            <div class="login-loading" id="loginLoading">验证中...</div>
         </div>
     </div>
-    
-    <!-- 详情弹窗 -->
-    <div class="modal" id="detailModal">
-        <div class="modal-content">
-            <div class="modal-header" id="modalTitle"></div>
-            <div class="modal-body" id="modalBody"></div>
-            <div class="modal-footer">
-                <button class="modal-copy-btn" id="modalCopyBtn">📋 复制全文</button>
-                <button class="modal-close-btn" id="modalCloseBtn">关闭</button>
+
+    <!-- 主页面 -->
+    <div id="main-page">
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-brand">✨ 提示词库</div>
+                <div class="navbar-actions">
+                    <button class="navbar-btn" id="logoutBtn">🚪 退出</button>
+                </div>
+            </div>
+
+            <div class="header">
+                <h1>✨ 提示词库</h1>
+                <p>精选高效提示词，一键复制即用</p>
+            </div>
+
+            <div class="filter-section">
+                <label class="filter-label">📁 分类筛选</label>
+                <div class="tag-buttons" id="tagButtons"></div>
+
+                <input
+                    type="text"
+                    class="search-box"
+                    id="searchInput"
+                    placeholder="🔍 搜索提示词名称或内容..."
+                >
+            </div>
+
+            <div class="prompts-grid" id="promptsGrid"></div>
+
+            <div class="empty-state" id="emptyState" style="display:none;">
+                <p>暂无匹配的提示词</p>
+            </div>
+        </div>
+
+        <!-- 详情弹窗 -->
+        <div class="modal" id="detailModal">
+            <div class="modal-content">
+                <div class="modal-header" id="modalTitle"></div>
+                <div class="modal-body" id="modalBody"></div>
+                <div class="modal-footer">
+                    <button class="modal-copy-btn" id="modalCopyBtn">📋 复制全文</button>
+                    <button class="modal-close-btn" id="modalCloseBtn">关闭</button>
+                </div>
             </div>
         </div>
     </div>
-    
+
     <script>
-        // 提示词数据（本地存储，可改为API调用）
-        const promptsData = [
-            {
-                id: 1,
-                title: "AI写作助手",
-                tags: ["写作", "AI"],
-                preview: "请帮我用以下风格改进这段文字：简洁、专业、引人入胜...",
-                content: "请帮我用以下风格改进这段文字：\n\n风格要求：\n1. 简洁明了\n2. 专业但不生硬\n3. 引人入胜\n4. 易于理解\n\n请提供改进版本并说明改进之处。"
-            },
-            {
-                id: 2,
-                title: "代码审查专家",
-                tags: ["代码", "审查"],
-                preview: "请审查以下代码，指出问题并提供改进建议...",
-                content: "请您作为一名资深代码审查员，审查以下代码：\n\n审查重点：\n1. 代码质量和可读性\n2. 潜在的性能问题\n3. 安全隐患\n4. 最佳实践\n5. 可维护性\n\n请提供详细的改进建议。"
-            },
-            {
-                id: 3,
-                title: "产品文案撰写",
-                tags: ["营销", "文案"],
-                preview: "为我的产品写一个引人注目的营销文案...",
-                content: "请为我的产品写一个吸引人的营销文案。\n\n产品信息：\n- 产品名称：\n- 主要特点：\n- 目标用户：\n- 核心价值：\n\n文案要求：\n1. 突出产品优势\n2. 触发用户需求\n3. 包含行动号召\n4. 字数在100-200字"
-            },
-            {
-                id: 4,
-                title: "学习计划制定",
-                tags: ["教育", "计划"],
-                preview: "为我制定一个系统的学习计划...",
-                content: "请为我制定一个30天的学习计划。\n\n学习信息：\n- 学习科目：\n- 当前水平：\n- 学习目标：\n- 每日可用时间：\n\n计划要求：\n1. 分阶段目标\n2. 具体学习资源\n3. 每日任务清单\n4. 评估方法"
-            },
-            {
-                id: 5,
-                title: "数据分析报告",
-                tags: ["分析", "数据"],
-                preview: "帮我分析数据并生成洞察...",
-                content: "请帮我分析以下数据并生成商业洞察。\n\n数据信息：\n- 数据类型：\n- 数据范围：\n- 关键指标：\n- 业务背景：\n\n分析要求：\n1. 趋势分析\n2. 关键发现\n3. 潜在原因\n4. 优化建议"
-            },
-            {
-                id: 6,
-                title: "内容创意生成",
-                tags: ["创意", "内容"],
-                preview: "为我的内容生成创意想法...",
-                content: "请为我生成5个创意内容想法。\n\n背景信息：\n- 内容类型：\n- 目标受众：\n- 品牌调性：\n- 核心消息：\n\n要求：\n1. 创意新颖\n2. 可执行性强\n3. 与品牌一致\n4. 包含内容形式建议"
-            }
-        ];
-        
-        let filteredPrompts = [...promptsData];
+        // 全局配置
+        const API_BASE = '/api';
+        let authToken = localStorage.getItem('auth_token');
+        let promptsData = [];
+        let filteredPrompts = [];
         let selectedTags = new Set();
-        
-        // 初始化
-        function init() {
-            renderTags();
-            renderPrompts();
-            setupEventListeners();
+
+        // ============ 认证相关 ============
+
+        // 显示错误信息
+        function showLoginError(message) {
+            const errorEl = document.getElementById('loginError');
+            errorEl.textContent = message;
+            errorEl.style.display = 'block';
         }
-        
-        // 渲染标签过滤按钮
+
+        // 隐藏错误信息
+        function hideLoginError() {
+            document.getElementById('loginError').style.display = 'none';
+        }
+
+        // 显示加载状态
+        function showLoginLoading() {
+            document.getElementById('loginLoading').style.display = 'block';
+            document.getElementById('loginBtn').disabled = true;
+        }
+
+        // 隐藏加载状态
+        function hideLoginLoading() {
+            document.getElementById('loginLoading').style.display = 'none';
+            document.getElementById('loginBtn').disabled = false;
+        }
+
+        // 登录处理
+        async function handleLogin(password) {
+            hideLoginError();
+            showLoginLoading();
+
+            try {
+                const response = await fetch(`${API_BASE}/auth`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ password }),
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    authToken = data.token;
+                    localStorage.setItem('auth_token', authToken);
+                    showMainPage();
+                    loadPrompts();
+                } else {
+                    showLoginError(data.error || '密码错误');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                showLoginError('网络错误，请稍后重试');
+            } finally {
+                hideLoginLoading();
+            }
+        }
+
+        // 退出登录
+        function handleLogout() {
+            authToken = null;
+            localStorage.removeItem('auth_token');
+            showLoginPage();
+        }
+
+        // 检查 Token 有效性
+        async function checkTokenValidity() {
+            if (!authToken) {
+                return false;
+            }
+
+            try {
+                // 尝试访问需要认证的 API
+                const response = await fetch(`${API_BASE}/prompts`, {
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`,
+                    },
+                });
+
+                return response.ok;
+            } catch (error) {
+                return false;
+            }
+        }
+
+        // ============ 页面切换 ============
+
+        function showLoginPage() {
+            document.getElementById('login-page').style.display = 'flex';
+            document.getElementById('main-page').style.display = 'none';
+        }
+
+        function showMainPage() {
+            document.getElementById('login-page').style.display = 'none';
+            document.getElementById('main-page').style.display = 'block';
+        }
+
+        // ============ 数据加载 ============
+
+        async function loadPrompts() {
+            try {
+                const headers = {};
+                if (authToken) {
+                    headers['Authorization'] = `Bearer ${authToken}`;
+                }
+
+                const response = await fetch(`${API_BASE}/prompts`, { headers });
+
+                if (response.ok) {
+                    promptsData = await response.json();
+                    filteredPrompts = [...promptsData];
+                    renderTags();
+                    renderPrompts();
+                } else {
+                    console.error('Failed to load prompts');
+                    // 使用默认数据（演示）
+                    promptsData = getDefaultPrompts();
+                    filteredPrompts = [...promptsData];
+                    renderTags();
+                    renderPrompts();
+                }
+            } catch (error) {
+                console.error('Load prompts error:', error);
+                // 使用默认数据
+                promptsData = getDefaultPrompts();
+                filteredPrompts = [...promptsData];
+                renderTags();
+                renderPrompts();
+            }
+        }
+
+        function getDefaultPrompts() {
+            return [
+                {
+                    id: 1,
+                    title: "AI写作助手",
+                    tags: ["写作", "AI"],
+                    preview: "请帮我用以下风格改进这段文字：简洁、专业、引人入胜...",
+                    content: "请帮我用以下风格改进这段文字：\n\n风格要求：\n1. 简洁明了\n2. 专业但不生硬\n3. 引人入胜\n4. 易于理解\n\n请提供改进版本并说明改进之处。"
+                },
+                {
+                    id: 2,
+                    title: "代码审查专家",
+                    tags: ["代码", "审查"],
+                    preview: "请审查以下代码，指出问题并提供改进建议...",
+                    content: "请您作为一名资深代码审查员，审查以下代码：\n\n审查重点：\n1. 代码质量和可读性\n2. 潜在的性能问题\n3. 安全隐患\n4. 最佳实践\n5. 可维护性\n\n请提供详细的改进建议。"
+                },
+                {
+                    id: 3,
+                    title: "产品文案撰写",
+                    tags: ["营销", "文案"],
+                    preview: "为我的产品写一个引人注目的营销文案...",
+                    content: "请为我的产品写一个吸引人的营销文案。\n\n产品信息：\n- 产品名称：\n- 主要特点：\n- 目标用户：\n- 核心价值：\n\n文案要求：\n1. 突出产品优势\n2. 触发用户需求\n3. 包含行动号召\n4. 字数在100-200字"
+                }
+            ];
+        }
+
+        // ============ 渲染函数 ============
+
         function renderTags() {
             const allTags = new Set();
             promptsData.forEach(prompt => {
                 prompt.tags.forEach(tag => allTags.add(tag));
             });
-            
+
             const tagButtonsContainer = document.getElementById('tagButtons');
             tagButtonsContainer.innerHTML = '';
-            
+
             // 添加"全部"按钮
             const allBtn = document.createElement('button');
             allBtn.textContent = '全部';
@@ -411,7 +681,7 @@
                 filterPrompts();
             };
             tagButtonsContainer.appendChild(allBtn);
-            
+
             // 添加分类标签
             Array.from(allTags).sort().forEach(tag => {
                 const btn = document.createElement('button');
@@ -430,26 +700,25 @@
                 tagButtonsContainer.appendChild(btn);
             });
         }
-        
-        // 渲染提示词卡片
+
         function renderPrompts() {
             const grid = document.getElementById('promptsGrid');
             const emptyState = document.getElementById('emptyState');
-            
+
             if (filteredPrompts.length === 0) {
                 grid.innerHTML = '';
                 emptyState.style.display = 'block';
                 return;
             }
-            
+
             emptyState.style.display = 'none';
             grid.innerHTML = filteredPrompts.map(prompt => `
                 <div class="prompt-card">
-                    <div class="prompt-title">${prompt.title}</div>
+                    <div class="prompt-title">${escapeHtml(prompt.title)}</div>
                     <div class="prompt-tags">
-                        ${prompt.tags.map(tag => `<span class="prompt-tag">${tag}</span>`).join('')}
+                        ${prompt.tags.map(tag => `<span class="prompt-tag">${escapeHtml(tag)}</span>`).join('')}
                     </div>
-                    <div class="prompt-preview">${prompt.preview}</div>
+                    <div class="prompt-preview">${escapeHtml(prompt.preview)}</div>
                     <div class="prompt-actions">
                         <button class="copy-btn" onclick="copyToClipboard('${prompt.id}')">
                             📋 复制
@@ -461,24 +730,30 @@
                 </div>
             `).join('');
         }
-        
-        // 复制到剪贴板
+
+        // ============ 交互功能 ============
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
         function copyToClipboard(id) {
             const prompt = promptsData.find(p => p.id == id);
             const text = `${prompt.title}\n\n${prompt.content}`;
-            
+
             navigator.clipboard.writeText(text).then(() => {
                 showToast('✅ 已复制到剪贴板！');
             });
         }
-        
-        // 显示详情弹窗
+
         function showDetail(id) {
             const prompt = promptsData.find(p => p.id == id);
             document.getElementById('modalTitle').textContent = prompt.title;
             document.getElementById('modalBody').textContent = prompt.content;
             document.getElementById('detailModal').classList.add('active');
-            
+
             document.getElementById('modalCopyBtn').onclick = () => {
                 const text = `${prompt.title}\n\n${prompt.content}`;
                 navigator.clipboard.writeText(text).then(() => {
@@ -486,52 +761,72 @@
                 });
             };
         }
-        
-        // 关闭弹窗
+
         function closeModal() {
             document.getElementById('detailModal').classList.remove('active');
         }
-        
-        // 显示提示信息
+
         function showToast(message) {
             const toast = document.createElement('div');
             toast.className = 'toast';
             toast.textContent = message;
             document.body.appendChild(toast);
-            
+
             setTimeout(() => {
                 toast.remove();
             }, 2000);
         }
-        
-        // 过滤提示词
+
         function filterPrompts() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            
+
             filteredPrompts = promptsData.filter(prompt => {
-                const matchesSearch = 
+                const matchesSearch =
                     prompt.title.toLowerCase().includes(searchTerm) ||
                     prompt.preview.toLowerCase().includes(searchTerm) ||
                     prompt.content.toLowerCase().includes(searchTerm);
-                
-                const matchesTags = selectedTags.size === 0 || 
+
+                const matchesTags = selectedTags.size === 0 ||
                     prompt.tags.some(tag => selectedTags.has(tag));
-                
+
                 return matchesSearch && matchesTags;
             });
-            
+
             renderPrompts();
         }
-        
-        // 绑定事件监听
-        function setupEventListeners() {
-            document.getElementById('searchInput').addEventListener('input', filterPrompts);
-            document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
-            document.getElementById('detailModal').addEventListener('click', (e) => {
-                if (e.target.id === 'detailModal') closeModal();
-            });
+
+        // ============ 事件监听 ============
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const password = document.getElementById('passwordInput').value;
+            if (password) {
+                await handleLogin(password);
+            }
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', handleLogout);
+
+        document.getElementById('searchInput').addEventListener('input', filterPrompts);
+        document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+        document.getElementById('detailModal').addEventListener('click', (e) => {
+            if (e.target.id === 'detailModal') closeModal();
+        });
+
+        // ============ 初始化 ============
+
+        async function init() {
+            // 检查是否已登录
+            const isLoggedIn = await checkTokenValidity();
+
+            if (isLoggedIn) {
+                showMainPage();
+                loadPrompts();
+            } else {
+                showLoginPage();
+            }
         }
-        
+
         // 启动应用
         init();
     </script>

@@ -1,3 +1,27 @@
 name = "prompt-library"
-type = "javascript"
+type = "service-worker"
 compatibility_date = "2024-01-01"
+workers_dev = true
+
+# 环境配置
+[vars]
+ENVIRONMENT = "development"
+
+# 开发环境
+[env.development]
+vars = { ENVIRONMENT = "development" }
+kv_namespaces = [
+  { binding = "PROMPTS_KV", id = "", preview_id = "" }
+]
+
+# 生产环境
+[env.production]
+vars = { ENVIRONMENT = "production", GITHUB_REPO = "", GITHUB_BRANCH = "main" }
+kv_namespaces = [
+  { binding = "PROMPTS_KV", id = "" }
+]
+
+# 生产环境 Secrets
+[env.production.secrets]
+ADMIN_PASSWORD_HASH = "" # 通过 wrangler secret put 设置
+GITHUB_TOKEN = "" # 通过 wrangler secret put 设置
